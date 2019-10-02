@@ -1,0 +1,17 @@
+/*Map style*/
+.map-wrapper {
+  background-color: #eeeeee;
+  border-radius: 10px;
+  padding: 15px;
+  position: relative;
+}
+
+.map-container {
+  border: 2px solid #cfcdcd;
+  display: block;
+  width: 100%;
+  min-height: 600px;
+  border-radius: 5px;
+}
+
+/*# sourceMappingURL=style.css.map */
