@@ -5,7 +5,6 @@ var map,
   tileLayer,
   mapProvider = 'https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
   mapEl = 'map',
-  mapContainer = document.querySelector('.map-container'),
   mapOptions = {
     zoom: 15,
     maxZoom: 19,
@@ -13,8 +12,6 @@ var map,
     // worldCopyJump: true,
     zoomDelta: 0.5,
     attributionControl: false,
-    subscriptionKey: 'tTk1JVEaeNvDkxxnxHm9cYaCvqlOq1u-fXTvyXn2XkA',
-    // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
   },
   marker,
   circle,
@@ -29,10 +26,8 @@ marker = L.marker(center, {
   name: 'farid',
   from: 'dhaka'
 }).addTo(featureGroup);
-//marker.bindPopup('<h3>I\'m a popup</h3>');
 popup = L.popup();
 marker.on('click', function (e) {
-  debugger;
   popup.setLatLng(e.latlng).setContent('Latlong : ' + e.latlng.lat + ',' + e.latlng.lng).openOn(map);
 });
 map.on('click', function (e) {
