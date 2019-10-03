@@ -12,6 +12,7 @@ var map,
     preferCanvas: true,
     // worldCopyJump: true,
     zoomDelta: 0.5,
+    attributionControl: false,
     subscriptionKey: 'tTk1JVEaeNvDkxxnxHm9cYaCvqlOq1u-fXTvyXn2XkA',
     // attribution: '&copy; <a href="https://www.openstreetmap.org/copyright" target="_blank">OpenStreetMap</a> contributors'
   },
