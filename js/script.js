@@ -16,20 +16,48 @@ var map,
   marker,
   circle,
   popup,
-  featureGroup;
+  featureGroup,
+  markedData = [];
 
 map = L.map(mapEl, mapOptions).setView(center);
 tileLayer = L.tileLayer(mapProvider, mapOptions);
 tileLayer.addTo(map);
 featureGroup = L.featureGroup().addTo(map);
-marker = L.marker(center, {
-  name: 'farid',
-  from: 'dhaka'
-}).addTo(featureGroup);
 popup = L.popup();
-marker.on('click', function (e) {
-  popup.setLatLng(e.latlng).setContent('Latlong : ' + e.latlng.lat + ',' + e.latlng.lng).openOn(map);
+/*loop all data from data.js*/
+data.map(function (item) {
+  var _center = [item.Lat, item.Lng];
+  var _marker = L.marker(_center, item).addTo(featureGroup);
+  markedData.push(_marker);
 });
+var popupTemplate = `
+<div class="leaflet_popup">
+  <h2 class="popup-title" style="margin: 0;">{title}</h2>
+  <div class="popup-thumb-holder">
+  <img class="popup-img" src="{img}" alt="" style="max-width: 100%;">
+  </div>
+  <div class="popup-content">
+    <p style="margin:5px 0 8px 0">{addressLine},&nbsp;<br>{town}<br>{postcode}<br>Club Type: {clubType}<br>Email: {email}<br>Phone: {phone}</p>
+  </div>
+</div>
+`;
+markedData.map(function (_marker) {
+  _marker.on('click', function (e) {
+    var optionsData = e.target.options,
+      popupContent = popupTemplate
+        .replace('{title}', optionsData.ClubName)
+        .replace('{img}', 'https://paddleaustralia.azolve.com/store/Repository/2/287964/' + optionsData.ClubPhoto)
+        .replace('{addressLine}', optionsData.ClubaddressLine1)
+        .replace('{town}', optionsData.Clubtown)
+        .replace('{postcode}', optionsData.Clubpostcode)
+        .replace('{clubType}', optionsData.ClubType)
+        .replace('{email}', optionsData.ClubemailAddress)
+        .replace('{phone}', optionsData.ClubPhoneNumber);
+    popup.setLatLng(e.latlng).setContent(popupContent).openOn(map);
+  });
+});
+//Fit bounds
+map.fitBounds(featureGroup.getBounds());
 map.on('click', function (e) {
   //L.marker([e.latlng.lat, e.latlng.lng]).addTo(featureGroup);
   //map.fitBounds(featureGroup.getBounds());
