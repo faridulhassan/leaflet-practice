@@ -31,7 +31,7 @@ data.map(function (item) {
 });
 var popupTemplate = `
 <div class="leaflet_popup">
-  <h2 class="popup-title" style="margin: 0;">{title}</h2>
+  <h5 class="popup-title" style="margin: 0;">{title}</h5>
   <div class="popup-thumb-holder">
   <img class="popup-img" src="{img}" alt="" style="max-width: 100%;">
   </div>

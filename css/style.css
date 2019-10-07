@@ -1,27 +1,27 @@
-/*Common style*/
-.app-wrapper {
-  width: 100%;
-  height: 100vh;
+/*Menu*/
+.top-nav-wrapper {
+  z-index: 9999;
+  height: 64px;
 }
 
-.map-wrapper, .sidebar {
+/*Map style*/
+.map-wrapper, .map-element {
   height: 100%;
 }
 
 .map-wrapper {
-  /*width: 60%;*/
-  -webkit-box-flex: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  background-color: #eeeeee;
+  position: relative;
 }
 
 .map-element {
-  height: 100%;
+  min-height: 400px;
 }
 
 /*Sidebar*/
 .sidebar {
-  width: 400px;
+  width: 100%;
+  height: 100%;
   max-width: 100%;
 }
 .sidebar .sidebar-title-bar {
@@ -39,14 +39,28 @@
   padding: 10px;
 }
 
-/*Map style*/
-.map-wrapper {
-  background-color: #eeeeee;
+/*Common style*/
+.app-wrapper {
+  width: 100%;
+  height: 100vh;
+}
+
+.content-wrapper {
+  height: calc(100% - 64px);
   position: relative;
 }
 
-.map-element {
-  min-height: 400px;
+.content-left, .content-right {
+  height: 100%;
+}
+.content-left {
+  padding-right: 400px;
+}
+.content-right {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 400px;
 }
 
 /*# sourceMappingURL=style.css.map */

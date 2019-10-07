@@ -5,37 +5,62 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Leaflet Practice</title>
-    <link rel="stylesheet" href="css/bootstrap.css">
+    <!--<link rel="stylesheet" href="css/bootstrap.css">-->
+    <link rel="stylesheet" href="css/materialize.css">
     <link rel="stylesheet" href="css/fontawesome.min.css">
     <link rel="stylesheet" href="css/leaflet.css">
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-    <div class="app-wrapper d-flex">
-      <div class="map-wrapper">
-        <div id="map" class="map-element"></div>
+    <div class="app-wrapper">
+      <div class="top-nav-wrapper  navbar-fixed">
+        <nav class="light-blue lighten-1" role="navigation">
+          <div class="nav-wrapper container">
+            <a id="logo-container" href="#" class="brand-logo text">Leaflet Map</a>
+            <!--
+            <ul class="right hide-on-med-and-down">
+              <li>
+                <a href="#">Navbar Link</a>
+              </li>
+            </ul>
+            <ul id="nav-mobile" class="sidenav">
+              <li>
+                <a href="#">Navbar Link</a>
+              </li>
+            </ul>
+            <a href="#" data-target="nav-mobile" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            -->
+          </div>
+        </nav>
       </div>
-      <div class="sidebar sidebar--right">
-        <div class="sidebar-title-bar">
-          <h1 class="sidebar-title">Leaflet Mapping App</h1>
+      <div class="content-wrapper">
+        <div class="map-wrapper content-left">
+          <div id="map" class="map-element"></div>
         </div>
-        <div class="sidebar-body">
-          <div class="form-group">
-            <label for="radius">Select circle radius:</label>
-            <select class="form-control" id="radius" name="radius">
-              <option>10 miles</option>
-              <option>20 miles</option>
-              <option>30 miles</option>
-              <option>50 miles</option>
-              <option>100 miles</option>
-            </select>
-            <br>
+        <div class="sidebar sidebar--right content-right">
+          <div class="sidebar-title-bar">
+            <h1 class="sidebar-title">Leaflet Mapping App</h1>
+          </div>
+          <div class="sidebar-body">
+            <div class="form-group">
+              <label for="radius">Select circle radius:</label>
+              <select class="form-control" id="radius" name="radius">
+                <option>10 miles</option>
+                <option>20 miles</option>
+                <option>30 miles</option>
+                <option>50 miles</option>
+                <option>100 miles</option>
+              </select>
+              <br>
+            </div>
           </div>
         </div>
       </div>
     </div>
     <script src="js/jquery.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <!--<script src="js/popper.min.js"></script>-->
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    <script src="js/materialize.js"></script>
     <script src="js/leaflet-src.js"></script>
     <script src="data/data.js"></script>
     <script src="js/script.js"></script>

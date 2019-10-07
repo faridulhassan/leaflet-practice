@@ -1,0 +1,11 @@
+/*Map style*/
+.map-wrapper, .map-element {
+  height: 100%;
+}
+.map-wrapper {
+  background-color: #eeeeee;
+  position: relative;
+}
+.map-element {
+  min-height: 400px;
+}
